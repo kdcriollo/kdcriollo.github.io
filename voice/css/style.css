@@ -29,8 +29,8 @@ h1{
 	font-size: 50px;
 }
 #convert_text{
-  width: 100%;
-  height: 200px;
+  width: 150%;
+  height: 420px;
   border-radius: 10px;
   resize: none;
   padding: 10px;
@@ -38,11 +38,11 @@ h1{
   margin-bottom: 10px;
 }
 button{
-	padding: 12px 20px;
+	padding: 22px 30px;
   background: #0ea4da;
   border: 0;
   color: #fff;
-  font-size: 18px;
+  font-size: 28px;
   cursor: pointer;
   border-radius: 5px;
 }
