@@ -11,7 +11,7 @@ body{
 	font-family: arial;
 	font-size: 16px;
 	margin: 0;
-	background:linear-gradient(to right bottom, #d13cff, #031f6a);
+	background:linear-gradient(to right bottom, #ffffff, #031f6a);
 	color: #000;
 	
 	display: flex;
@@ -21,7 +21,7 @@ body{
 }
 
 .voice_to_text{
-  width: 600px;
+  width: 1000px;
   text-align: center;
 }
 h1{
@@ -34,15 +34,15 @@ h1{
   border-radius: 10px;
   resize: none;
   padding: 10px;
-  font-size: 50px;
+  font-size: 60px;
   margin-bottom: 10px;
 }
 button{
-	padding: 22px 30px;
-  background: #0ea4da;
+	padding: 20px 40px;
+  background: #000080;
   border: 0;
   color: #fff;
-  font-size: 28px;
+  font-size: 60px;
   cursor: pointer;
   border-radius: 5px;
 }
