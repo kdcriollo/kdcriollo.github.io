@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Pregunta 4</title>
+		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		  <style type="text/css">
+		    #background{position:absolute; width:99%; height:130%;}
+		    #fixed {position:absolute; top: 0px; left: 0px;}
+		  </style>
+
+		<style>
+			table,th,td {
+			  border : 1px solid black;
+			  border-collapse: collapse;
+			  margin-left: auto;
+			  margin-right: auto;
+			}
+			th,td {
+			  padding: 10px;
+			  margin-left: auto;
+			  margin-right: auto;
+			}
+			</style>
+	</head>
+	<body>
+		<div>
+			<img id="background" src="../../Imagenes/fondo.jpg"/> 
+		</div>
+		<div id="fixed">
+			</br></br></br>
+			<div style="padding-left:510px;">
+				<img src="../../Imagenes/selloespe.jpg"  width="65%" align="center">
+			</div>
+			<div style="text-align: center;">
+				<h1>Pregunta 4</h1>
+			</div>
+			<p style="padding-left:10%;">4) Mostrar datos XML en una tabla utilizando AJAX</p>
+			
+				<center><div >
+					<button type="button" onclick="loadDoc()">Obtener Tabla</button>
+					<br><br>
+					<table id="demo"></table>
+
+					<br>
+			<button onclick="window.location.href='../../index.html'">Menu principal</button>
+			</div></center>
+
+            <script>
+				function loadDoc() {
+				  var xhttp = new XMLHttpRequest();
+				  xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+					  myFunction(this);
+					}
+				  };
+				  xhttp.open("GET", "ventas.xml", true);
+				  xhttp.send();
+				}
+				function myFunction(xml) {
+				  var i;
+				  var xmlDoc = xml.responseXML;
+				  var table="<tr><th>Numero</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Cantidad</th><th>PrecioT</th></tr>";
+				  var x = xmlDoc.getElementsByTagName("PRODUCTO");
+				  for (i = 0; i <x.length; i++) { 
+					table += "<tr><td>" +
+					x[i].getElementsByTagName("NUMERO")[0].childNodes[0].nodeValue +
+					"</td><td>" +
+					x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+					"</td><td>"+
+					x[i].getElementsByTagName("DESCRIPCION")[0].childNodes[0].nodeValue +
+					"</td><td>"+
+					x[i].getElementsByTagName("PRECIOU")[0].childNodes[0].nodeValue +
+					"</td><td>"+
+					x[i].getElementsByTagName("CANTIDAD")[0].childNodes[0].nodeValue +
+					"</td><td>"+
+					x[i].getElementsByTagName("PRECIOT")[0].childNodes[0].nodeValue +
+					"</td></tr>";
+				  }
+				  document.getElementById("demo").innerHTML = table;
+				}
+				</script>
+			</div>
+			
+				<div style="padding-left:250px; ">
+
+				<br><br><a href="../../index.html" style="font-size: 20px;">Regresar</a><br> <br>
+				</div>
+			</div>						
+		</div> 		
+	</body>
+</html>
+
